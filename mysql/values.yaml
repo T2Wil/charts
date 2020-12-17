@@ -11,6 +11,8 @@
 ## Bitnami MySQL image
 ## ref: https://hub.docker.com/r/bitnami/mysql/tags/
 ##
+mysql:
+  enabled: true
 image:
   registry: docker.io
   repository: bitnami/mysql
