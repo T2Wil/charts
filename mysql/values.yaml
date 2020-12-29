@@ -40,7 +40,7 @@ image:
 
 ## String to fully override common.names..fullname template
 ##
-# fullnameOverride:
+fullnameOverride: irembo-nifi-mysql
 
 ## Cluster domain
 ##
@@ -52,7 +52,8 @@ commonAnnotations: {}
 
 ## Common labels to add to all MySQL resources (sub-charts are not considered). Evaluated as a template
 ##
-commonLabels: {}
+commonLabels:
+  app: nifi
 
 ## Use an alternate scheduler, e.g. "stork".
 ## ref: https://kubernetes.io/docs/tasks/administer-cluster/configure-multiple-schedulers/
@@ -69,19 +70,19 @@ auth:
   ## MySQL root password
   ## ref: https://github.com/bitnami/bitnami-docker-mysql#setting-the-root-password-on-first-run
   ##
-  rootPassword: ""
+  rootPassword: "mysql@Irembo"
   ## MySQL custom user and database
   ## ref: https://github.com/bitnami/bitnami-docker-mysql/blob/master/README.md#creating-a-database-on-first-run
   ## ref: https://github.com/bitnami/bitnami-docker-mysql/blob/master/README.md#creating-a-database-user-on-first-run
   ##
   database: my_database
-  username: ""
-  password: ""
+  username: "irembo"
+  password: "mysql@Irembo"
   ## MySQL replication user and password
   ## ref: https://github.com/bitnami/bitnami-docker-mysql#setting-up-a-replication-cluster
   ##
   replicationUser: replicator
-  replicationPassword: ""
+  replicationPassword: "mysql@Irembo"
   ## Existing secret with MySQL credentials
   ## NOTE: When it's set the previous parameters are ignored.
   ##
@@ -99,10 +100,10 @@ auth:
   ##   user: /vault/secrets/mysql-user
   ##   replicator: /vault/secrets/mysql-replicator
   ##
-  customPasswordFiles:
-    root: ""
-    user: ""
-    replicator: ""
+  # customPasswordFiles:
+  #   root: ""
+  #   user: ""
+  #   replicator: ""
 
 ## initdb scripts
 ## Specify dictionary of scripts to be run at first boot
