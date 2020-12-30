@@ -362,14 +362,14 @@ primary:
   service:
     ## Service type
     ##
-    type: ClusterIP
+    type: LoadBalancer
     ## Service port
     ##
     port: 3306
     ## Specify the nodePort value for the LoadBalancer and NodePort service types.
     ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#type-nodeport
     ##
-    nodePort: ""
+    nodePort: 31000
     ## Service clusterIP
     ##
     # clusterIP: None
